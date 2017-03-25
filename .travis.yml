@@ -1,11 +1,17 @@
 language: android
 android:
- components:
-    - tools
-    - build-tools-25.0.2
-    - android-25
-    - extra-android-m2repository
-
+  components:
+  - tools
+  - build-tools-25.0.2
+  - android-25
+  - extra-android-m2repository
 jdk: oraclejdk8
-
 script: ./gradlew testDebug
+deploy:
+  provider: releases
+  api_key:
+    secure: RSZWM2K8Tw8prxXwpQChdNc324Y7S3SPnvAC2/uRUT4XiFWoyTZ9MY0TcinUjatQNyagFrcZKvGWt9iYQ+qcL9DKOiI9m8/1tqqduQSRkPgR7fjp6LYSBhf3EarjdB7YNirZuWNWZUByT/YImn0H8tcrODsf7pzf11/hWku9I7z0e7IzXuAwTXtM1boKhvjBV8cMTJ+9QJut94iMKWYXr7U02o1kzKaFzDDCXY9gO8upKRP0O2wtn91B+UFDtoK7r7RZLDZpZyImnQN7Ie60YCb4S72zG2qRKP31CmhIg6i0PjSlMwuVE7aquF890kO2HGL3s2Kk/lw29UwaX8CakFzKO2ASaN/LJ78Q3kft8yV4PnK+dPHR8WCihnJRYqKSW2BPafaTkCPxWQBfMm9zYYL/faJ1vFbRt4D+S5C8Sr5E9cqKbfLXlo4B56PpC0pU0ZBU0UNwObMyn7Wi9D+QEgNiodkVgcxTbSrqv2D9zmiUUApWD/nKeWGvmdFkeRe/DRrxAJ6BqEiLN/vqMH44QYbBuXHwws2CmrvWJl7qePgpOM2VTb+JiB+NntEBE0hdzf8UuoDbOWkNl5izscE1O3DAlXrjgBeLqc5d/aDR6sqoytSqnUgQBBCPZyaLdSbb0UX621qn2i3E/9oPsGclV04FyLJ6CkH48lJYCgYhIcY=
+  file: k9mail/buils/outputs/apk/k9mail-debug.apk
+  on:
+    repo: setyadhiputrad/k-9
+    tags: true
